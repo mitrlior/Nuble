@@ -1,0 +1,112 @@
+body {
+  max-width: max-content;
+  margin: auto;
+  background-color: #e8e3e3;
+}
+.box {
+  cursor: pointer;
+  background-color: transparent;
+  /* margin: 1rem; */
+  font-size: 2rem;
+  border: 0.1rem solid #e8e3e3;
+  border-radius: 1rem;
+}
+.box .rows {
+  text-align: center;
+  font-weight: 400;
+  align-items: center;
+  background-color: #e8e3e3;
+}
+.box .rows .row {
+  /* margin: 1rem; */
+  white-space: nowrap;
+}
+.btn {
+  width: 4rem;
+  height: 4rem;
+  /* margin-right: 1rem; */
+  white-space: nowrap;
+}
+
+.box .btn-num {
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #6c757d;
+  white-space: nowrap;
+  color: black;
+}
+.box .btn-num:focus {
+  outline: none !important;
+  border: 1px solid #719ece;
+  box-shadow: 0 0 10px #719ece;
+}
+
+.box .btn-num:hover {
+  background-color: #6c757d;
+}
+
+.box .btn-eq {
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid transparent;
+  white-space: nowrap;
+  color: black;
+}
+
+.box .btn-res {
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  background-color: transparent !important;
+  border: 0.1rem solid transparent;
+  white-space: nowrap;
+  color: black;
+}
+
+.num-row {
+  cursor: pointer;
+  margin: 1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.num-row:focus {
+  outline: none !important;
+  border: 1px solid #719ece;
+  box-shadow: 0 0 10px #719ece;
+}
+.num-row .btn-calc {
+  display: inline-block;
+  background-color: #6c757d;
+  color: white;
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #6c757d;
+}
+.num-row .btn-calc:focus {
+  outline: none !important;
+  border: 1px solid #719ece;
+  box-shadow: 0 0 10px #719ece;
+}
+.num-row .btn-ent {
+  display: inline-block;
+  background-color: #6c757d;
+  color: white;
+  width: 15rem !important;
+  height: 4rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #6c757d;
+}
+
+.num-row .btn-ent :focus {
+  outline: none !important;
+  border: 1px solid red;
+  box-shadow: 0 0 10px #719ece;
+}
