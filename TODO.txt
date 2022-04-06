@@ -1,0 +1,2 @@
+1. create function that checks if the string is the same string and paints the blocks
+2. create statistics page
