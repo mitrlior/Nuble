@@ -159,3 +159,23 @@ function create_num_matrix() {
   }
   document.getElementById("box").appendChild(matrix);
 }
+function show_scores() {
+  scores_vals = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+  var scores_board = Object.assign(document.createElement("div"), {
+    className: "scores-div",
+    id: "scores",
+  });
+  var title = Object.assign(document.createElement("h5"), {
+    textContent: "Scores",
+    className: "scores-title",
+  });
+  scores_board.appendChild(title);
+  document.body.appendChild(scores_board);
+  for (var i = 0; i < 5; i++) {
+    var score_rows = Object.assign(document.createElement("div"), {
+      textContent: i + 1 + ")    " + scores_vals[i],
+      className: "scores-ranks",
+    });
+    scores_board.appendChild(score_rows);
+  }
+}
