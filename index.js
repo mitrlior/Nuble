@@ -3,7 +3,7 @@ var rows_len = 2;
 var row_index = 0;
 var col_index = 0;
 var isWinner = false;
-var arr = ['3','*','1','-','9'];
+var arr = ["3", "*", "1", "-", "9"];
 var solution = -6;
 
 // function get_random_number() {
@@ -32,72 +32,65 @@ var solution = -6;
 //   }
 //     random = Math.floor(eval(string));
 //     console.log(random);
-  
+
 //   return random;
 // }
-
 
 function checkRowEqualSolution(target) {
   let val;
   let value = "";
-  
-  for(var i = 0; i< col_len_num; i++) {
+
+  for (var i = 0; i < col_len_num; i++) {
     _id = row_index * 10 + i;
     val = document.getElementById(_id).textContent;
-    console.log(val)
+    console.log(val);
     value += String(val);
   }
-  
+
   try {
     //console.log(eval(value) + " " + value + " " + target)
     //console.log("what")
-    if (eval(value) == target)
-      return true;
+    if (eval(value) == target) return true;
+  } catch (e) {
+    console.log(e);
   }
-  catch(e){console.log(e)}
   return false;
 }
 
-
-
 function update_button(element) {
   const val = element.textContent;
+  const del = document.getElementById("124").textContent;
   //console.log(col_index + " " + row_index)
-  if (String(val) == "⌫") {
-    if (col_index == 0 && row_index == 0) 
+  if (val == del) {
+    if (col_index == 0 && row_index == 0) {
+      document.getElementById(0).innerHTML = "&nbsp;";
       return;
-    if(col_index == 0)
-    return;
-    col_index--;
-
-    if (row_index < 0) {
-      row_index = 7;
-      row_index = 0;
     }
+    col_index--;
+    if (col_index < 0)
+      if (row_index > 0) {
+        row_index--;
+        col_index = 7;
+      } else col_index = 0;
+
     _id = row_index * 10 + col_index;
     document.getElementById(_id).innerHTML = "&nbsp;";
-  } 
-  else {
+  } else {
     _id = row_index * 10 + col_index;
     if (row_index == rows_len) return;
-    
-    
-    
-    if (col_index == col_len_num -1) {
+
+    if (col_index == col_len_num - 1) {
       document.getElementById(_id).innerHTML = val;
-      if(checkRowEqualSolution(solution) == true) {
+      if (checkRowEqualSolution(solution) == true) {
         col_index = 0;
         row_index++;
-      }
-      else {
+      } else {
         col_index = col_len_num;
       }
-    }
-    else if(col_index < col_len_num -1) {
+    } else if (col_index < col_len_num - 1) {
       document.getElementById(_id).innerHTML = val;
       col_index++;
     }
-          
   }
 }
 
@@ -117,9 +110,9 @@ function create_calculator() {
       var btn = Object.assign(document.createElement("button"), {
         className: "num-row btn-calc",
         innerHTML: values[i][j],
+        id: 100 + i * 10 + j,
         onclick: function () {
-          if(!isWinner)
-            update_button(this);
+          if (!isWinner) update_button(this);
         },
       });
       row.appendChild(btn);
